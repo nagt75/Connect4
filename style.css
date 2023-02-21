@@ -1,0 +1,17 @@
+.mainContainer{
+    border:solid;
+    width:65%;
+    height:65vh;
+}
+.rowOne,.rowTwo,.rowThree,.rowFour,.rowFive,.rowSix
+{
+    border:solid orange;
+    height:16%;
+  display:flex;
+  justify-content: space-evenly;
+}
+.block1,.block2,.block3,.block4,.block5,.block6,.block7
+{
+    width:14%;
+  border:solid blue;  
+}
