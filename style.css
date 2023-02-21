@@ -1,12 +1,15 @@
 .mainContainer{
     border:solid;
-    width:65%;
-    height:65vh;
+    width:600px;
+    height:550px;
+    background-color: blue;
 }
 .rowOne,.rowTwo,.rowThree,.rowFour,.rowFive,.rowSix
 {
     /* border:solid orange; */
     margin-top:4px;
+    margin-bottom:5px;
+    
    
     height:16%;
   display:flex;
@@ -14,7 +17,8 @@
 }
 .block1,.block2,.block3,.block4,.block5,.block6,.block7
 {
-    width:14%;
+    height:70px;
+    width:70px;
   border:solid blue;  
   border-radius: 50%;
 }
