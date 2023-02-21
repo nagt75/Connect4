@@ -5,7 +5,9 @@
 }
 .rowOne,.rowTwo,.rowThree,.rowFour,.rowFive,.rowSix
 {
-    border:solid orange;
+    /* border:solid orange; */
+    margin-top:4px;
+   
     height:16%;
   display:flex;
   justify-content: space-evenly;
@@ -14,4 +16,5 @@
 {
     width:14%;
   border:solid blue;  
+  border-radius: 50%;
 }
