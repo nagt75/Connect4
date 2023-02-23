@@ -46,7 +46,36 @@ blockStyle(i,j){
         break;
        }
          } 
-    }    
+    }
+    player2(i){
+        this.i=i;
+    
+      while(this.k>=0)
+      {
+          this.blocks=this.rows[this.k].children
+        if(this.blocks[this.i].style.backgroundColor=="white"){
+          this.blocks[this.i].style.backgroundColor="yellow"
+          this.y++
+          this.txt=document.querySelector(".txt")
+          this.txt.innerHTML="player1"
+          this.btnClick("player1")
+          
+          break;
+        }
+        else if(this.blocks[this.i].style.backgroundColor=="red" || this.blocks[this.i].style.backgroundColor=="yellow"){
+          this.k--
+          this.blocks=this.rows[this.k].children
+          this.blocks[this.i].style.backgroundColor="yellow"
+          this.y++
+          this.txt=document.querySelector(".txt")
+          this.txt.innerHTML="player1"
+          this.btnClick("player1")
+         
+          break;
+         }
+           } 
+      }
+
 }
 let x= new Connect();
 x.blockStyle(0,0);
