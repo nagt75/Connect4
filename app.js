@@ -6,8 +6,8 @@ class Connect{
       this.j
       this.i
       this.k=this.rows.length-1;
-      this.r=0
-      this.y=0
+      this.r=[]
+      this.y=[]
       this.currentPlayer="player1";
       this.txt=document.querySelector(".txt");
     }
@@ -32,7 +32,7 @@ blockStyle(i,j){
         this.blocks[this.i].style.backgroundColor="red"
         this.currentPlayer="player2"
         this.txt.innerHTML=this.currentPlayer
-        this.r++
+        this.r.push(this.blocks[this.i])
         break;
        }
       this.k--
@@ -47,7 +47,7 @@ blockStyle(i,j){
               this.blocks[this.i].style.backgroundColor="yellow"
               this.currentPlayer="player1"
               this.txt.innerHTML=this.currentPlayer
-              this.y++
+              this.y.push(this.blocks[this.i])
               break;
             }
            this.k--
