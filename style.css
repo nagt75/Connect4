@@ -4,6 +4,12 @@
     height:550px;
     background-color: blue;
 }
+.connect4Box{
+  border:solid;
+  width:600px;
+  height:550px;
+  background-color: blue;
+}
 .rowOne,.rowTwo,.rowThree,.rowFour,.rowFive,.rowSix
 {
     /* border:solid orange; */
