@@ -5,6 +5,11 @@ class Connect{
       this.blocks=[];
       this.j
       this.i
+      this.k=this.rows.length-1;
+      this.r=0
+      this.y=0
+      this.currentPlayer="player1";
+      this.txt=document.querySelector(".txt");
     }
 
 // adding css style for the blocks
@@ -19,62 +24,35 @@ blockStyle(i,j){
     }
   }
   player1(i){
+    this.k=5
     this.i=i;
-    
-    while(this.k>=0)
-    {
-        this.blocks=this.rows[this.k].children
+    while (this.k >= 0) {
+      this.blocks=this.rows[this.k].children
       if(this.blocks[this.i].style.backgroundColor=="white"){
         this.blocks[this.i].style.backgroundColor="red"
+        this.currentPlayer="player2"
+        this.txt.innerHTML=this.currentPlayer
         this.r++
-       this.txt=document.querySelector(".txt")
-        this.txt.innerHTML="player2"
-  
-        this.btnClick("player2")
-        
-        break;
-      }
-      else if(this.blocks[this.i].style.backgroundColor=="red" || this.blocks[this.i].style.backgroundColor=="yellow"){
-        this.k--
-        this.blocks=this.rows[this.k].children
-        this.blocks[this.i].style.backgroundColor="red"
-        this.txt=document.querySelector(".txt")
-        this.txt.innerHTML="player2"
-        this.r++
-        this.btnClick("player2")
-     
         break;
        }
-         } 
-    }
-    player2(i){
-        this.i=i;
-    
-      while(this.k>=0)
-      {
-          this.blocks=this.rows[this.k].children
-        if(this.blocks[this.i].style.backgroundColor=="white"){
-          this.blocks[this.i].style.backgroundColor="yellow"
-          this.y++
-          this.txt=document.querySelector(".txt")
-          this.txt.innerHTML="player1"
-          this.btnClick("player1")
-          
-          break;
+      this.k--
+        } 
         }
-        else if(this.blocks[this.i].style.backgroundColor=="red" || this.blocks[this.i].style.backgroundColor=="yellow"){
-          this.k--
-          this.blocks=this.rows[this.k].children
-          this.blocks[this.i].style.backgroundColor="yellow"
-          this.y++
-          this.txt=document.querySelector(".txt")
-          this.txt.innerHTML="player1"
-          this.btnClick("player1")
-         
-          break;
-         }
-           } 
-      }
+        player2(i){
+            this.i=i;
+            this.k=5
+            while (this.k >= 0) {
+            this.blocks=this.rows[this.k].children
+            if(this.blocks[this.i].style.backgroundColor=="white"){
+              this.blocks[this.i].style.backgroundColor="yellow"
+              this.currentPlayer="player1"
+              this.txt.innerHTML=this.currentPlayer
+              this.y++
+              break;
+            }
+           this.k--
+              }
+          }
      player(p)  //calling player1 and player2 functions
       {
        if(this.currentPlayer=="player1"){
@@ -97,6 +75,8 @@ blockStyle(i,j){
         this.blocks[5].addEventListener("click",()=>{this.player(5)})
         this.blocks[6].addEventListener("click",()=>{this.player(6)})
         }
+
+
 
 }
 let x= new Connect();
