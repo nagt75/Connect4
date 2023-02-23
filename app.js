@@ -3,8 +3,6 @@ let parent=document.querySelector(".connect4Box")
    let blocks=[];
    let i;
    let j;
-   let r=[]
-   let y=[]
    let currentPlayer="player1";
    let txt;
    const blockStyle=()=>{
@@ -45,8 +43,7 @@ let parent=document.querySelector(".connect4Box")
             blocks=rows[j].children
               if(blocks[i].style.backgroundColor=="white"){
                 blocks[i].style.backgroundColor="red"
-                r.push(blocks[i].className)//pushing red color blocks into an array
-                document.querySelector(".rednames").append(blocks[i].className)
+                blocks[i].value=1 //setting value of all the red buttons to 1
                 currentPlayer="player2"
                 txt=document.querySelector(".txt")
                 txt.innerHTML=currentPlayer
@@ -62,8 +59,7 @@ let parent=document.querySelector(".connect4Box")
             blocks=rows[j].children
               if(blocks[i].style.backgroundColor=="white"){
                 blocks[i].style.backgroundColor="yellow"
-                y.push(blocks[i].className) ////pushing yellow color blocks into an array
-                document.querySelector(".yellownames").append(blocks[i].className)
+                blocks[i].value=2 //setting value of all the red buttons to 2
                 currentPlayer="player1"
                 txt=document.querySelector(".txt")
                 txt.innerHTML=currentPlayer
