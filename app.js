@@ -7,7 +7,7 @@ class Connect{
       this.i
     }
 
-
+// adding css style for the blocks
 blockStyle(i,j){
     for( this.i=i;this.i<this.rows.length;this.i++)
     {
@@ -75,7 +75,32 @@ blockStyle(i,j){
          }
            } 
       }
+     player(p)  //calling player1 and player2 functions
+      {
+       if(this.currentPlayer=="player1"){
+       this.player1(p)
+       }
+       else if(this.currentPlayer=="player2"){
+         this.player2(p)
+       }
+      }
+      btnClick(){
+      
+        this.txt.innerHTML=this.currentPlayer
+        
+        this.blocks=x.rows[0].children
+        this.blocks[0].addEventListener("click",()=>{this.player(0)})
+        this.blocks[1].addEventListener("click",()=>{this.player(1)})
+        this.blocks[2].addEventListener("click",()=>{this.player(2)})
+        this.blocks[3].addEventListener("click",()=>{this.player(3)})
+        this.blocks[4].addEventListener("click",()=>{this.player(4)})
+        this.blocks[5].addEventListener("click",()=>{this.player(5)})
+        this.blocks[6].addEventListener("click",()=>{this.player(6)})
+        }
 
 }
 let x= new Connect();
 x.blockStyle(0,0);
+const startGame=()=>{ 
+    x.btnClick()
+}
