@@ -18,6 +18,35 @@ blockStyle(i,j){
        }
     }
   }
+  player1(i){
+    this.i=i;
+    
+    while(this.k>=0)
+    {
+        this.blocks=this.rows[this.k].children
+      if(this.blocks[this.i].style.backgroundColor=="white"){
+        this.blocks[this.i].style.backgroundColor="red"
+        this.r++
+       this.txt=document.querySelector(".txt")
+        this.txt.innerHTML="player2"
+  
+        this.btnClick("player2")
+        
+        break;
+      }
+      else if(this.blocks[this.i].style.backgroundColor=="red" || this.blocks[this.i].style.backgroundColor=="yellow"){
+        this.k--
+        this.blocks=this.rows[this.k].children
+        this.blocks[this.i].style.backgroundColor="red"
+        this.txt=document.querySelector(".txt")
+        this.txt.innerHTML="player2"
+        this.r++
+        this.btnClick("player2")
+     
+        break;
+       }
+         } 
+    }    
 }
 let x= new Connect();
 x.blockStyle(0,0);
