@@ -51,7 +51,7 @@ let parent=document.querySelector(".connect4Box")
                }
               j--
             } 
-                
+            checkWinner();       
     }
     const player2=(i)=>{
         j=5
@@ -67,10 +67,27 @@ let parent=document.querySelector(".connect4Box")
                }
               j--
             } 
-               
+            checkWinner();     
     }
     
     const startGame=()=>{
         btnClick();
      
      }
+     const checkWinner=()=>
+     {
+      
+      for (let j=5;j>=0;j++)
+      {
+      blocks=rows[j].children
+      for (i=0;i<=6;i++)
+        {
+        // if(parseInt(blocks[i].value)===parseInt(blocks[i+1].value))
+        // {
+          document.querySelector(".rednames").append(blocks[i].value)
+          //  }
+        
+        }
+      }
+     
+    }
