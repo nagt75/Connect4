@@ -9,7 +9,7 @@ let parent=document.querySelector(".connect4Box")
    for (let i = 0; i <=5; i++) {
       c[i] = [];
     for (let j = 0; j <=6; j++) {
-    c[i][j] = j;
+    c[i][j] = 0;
     }
    }
    const blockStyle=()=>{
@@ -18,6 +18,7 @@ let parent=document.querySelector(".connect4Box")
     blocks[j]=rows[j].children// getting circle blocks as children of rows
     for(i=0;i<=6;i++)
     {
+
     blocks[j][i].style.cssText=
       "height:70px;width:70px; border:solid; blue;border-radius: 50%;background-color:white";// adding styles to blocks
     }
@@ -50,28 +51,24 @@ let parent=document.querySelector(".connect4Box")
       for (j=5;j>=0;j--){
               if(blocks[j][i].style.backgroundColor==="white"){
                 blocks[j][i].style.backgroundColor="red"
-               
+                c[j][i]=10
                 currentPlayer="player2"
                 txt=document.querySelector(".txt")
                 txt.innerHTML=currentPlayer
                 break;
                }
-               
-         
-            // checkWinner(i);       
-    }
+        }
+        checkWinner();  
   }
 
   const player2=(i)=>{
         
-          
-    for( j=5;j>=0;j--) {
+   for( j=5;j>=0;j--) {
    
-    {
+    
       if(blocks[j][i].style.backgroundColor==="white"){
         blocks[j][i].style.backgroundColor="yellow"
-        
-     
+        c[j][i]=20
         currentPlayer="player1"
         txt=document.querySelector(".txt")
         txt.innerHTML=currentPlayer
@@ -79,10 +76,37 @@ let parent=document.querySelector(".connect4Box")
        }
      } 
     
-    // checkWinner(i);       
+    checkWinner();       
 }
-}
+
 const startGame=()=>{
   btnClick();
 
 }
+const checkWinner=()=>
+     {
+    for (let j=5;j>=0;j--)
+      {
+        for(i=0;i<=6;i++)
+         {
+         if(c[j][i]==10 || c[j][i]==20 )
+         {
+         if(c[j][i]===c[j][i+1] && c[j][i]===c[j][i+2] && c[j][i]===c[j][i+3])
+         {
+          document.querySelector(".rednames").innerHTML="you win"
+          return
+          }
+        }
+
+       
+          // if(c[j][i]===c[j+1][i] && c[j][i]===c[j+2][i] && c[j][i]===c[j+3][i])
+          // {
+          //  document.querySelector(".yellownames").innerHTML="you win"
+          //  }
+        }
+      }
+   
+    
+      
+  
+    }
