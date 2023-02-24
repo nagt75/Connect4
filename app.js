@@ -5,17 +5,21 @@ let parent=document.querySelector(".connect4Box")
    let j;
    let currentPlayer="player1";
    let txt;
+   let c=[];
+   for (let i = 0; i <=5; i++) {
+      c[i] = [];
+    for (let j = 0; j <=6; j++) {
+    c[i][j] = j;
+    }
+   }
    const blockStyle=()=>{
-    
-    for(i=0;i<=5;i++)
+    for(j=0;j<=5;j++)
     {
-    blocks[i]=rows[i].children// getting circle blocks as children of rows
-    for(k=0;k<=6;k++)
+    blocks[j]=rows[j].children// getting circle blocks as children of rows
+    for(i=0;i<=6;i++)
     {
-    blocks[i][k].style.cssText=
+    blocks[j][i].style.cssText=
       "height:70px;width:70px; border:solid; blue;border-radius: 50%;background-color:white";// adding styles to blocks
-    
-     
     }
     }
   }
