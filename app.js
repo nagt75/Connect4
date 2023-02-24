@@ -43,56 +43,41 @@ let parent=document.querySelector(".connect4Box")
 
     }
     const player1=(i)=>{
-        j=5
-        while (j >= 0) {
-            blocks=rows[j].children
-              if(blocks[i].style.backgroundColor=="white"){
-                blocks[i].style.backgroundColor="red"
-                blocks[i].value=1 //setting value of all the red buttons to 1
+      for (j=5;j>=0;j--){
+             
+                
+              if(blocks[j][i].style.backgroundColor==="white"){
+                blocks[j][i].style.backgroundColor="red"
+                blocks[j][i].value=1
+                blocks[j][i].append( blocks[j][i].value)
                 currentPlayer="player2"
                 txt=document.querySelector(".txt")
                 txt.innerHTML=currentPlayer
                 break;
                }
-              j--
-            } 
-            checkWinner();       
+               
+         
+            // checkWinner(i);       
     }
-    const player2=(i)=>{
-        j=5
-        while (j >= 0) {
-            blocks=rows[j].children
-              if(blocks[i].style.backgroundColor=="white"){
-                blocks[i].style.backgroundColor="yellow"
-                blocks[i].value=2 //setting value of all the red buttons to 2
-                currentPlayer="player1"
-                txt=document.querySelector(".txt")
-                txt.innerHTML=currentPlayer
-                break;
-               }
-              j--
-            } 
-            checkWinner();     
-    }
-    
-    const startGame=()=>{
-        btnClick();
-     
-     }
-     const checkWinner=()=>
-     {
-      
-      for (let j=5;j>=0;j++)
-      {
-      blocks=rows[j].children
-      for (i=0;i<=6;i++)
-        {
-        // if(parseInt(blocks[i].value)===parseInt(blocks[i+1].value))
-        // {
-          document.querySelector(".rednames").append(blocks[i].value)
-          //  }
+  }
+
+  const player2=(i)=>{
         
-        }
-      }
-     
-    }
+          
+    for(let k=5;k>=0;k--) {
+   
+    {
+      if(blocks[k][i].style.backgroundColor==="white"){
+        blocks[k][i].style.backgroundColor="yellow"
+        blocks[k][i].value=2
+        blocks[k][i].append( blocks[k][i].value)
+        currentPlayer="player1"
+        txt=document.querySelector(".txt")
+        txt.innerHTML=currentPlayer
+        break;
+       }
+     } 
+    
+    // checkWinner(i);       
+}
+}
