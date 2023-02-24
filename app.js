@@ -20,17 +20,18 @@ let parent=document.querySelector(".connect4Box")
     }
   }
   blockStyle();
+  blockStyle();
   const btnClick=()=>{
     txt=document.querySelector(".txt")
     txt.innerHTML=currentPlayer
-    blocks=rows[0].children
-    blocks[0].addEventListener("click",function(){player(0)})
-    blocks[1].addEventListener("click",function(){player(1)})
-    blocks[2].addEventListener("click",function(){player(2)})
-    blocks[3].addEventListener("click",function(){player(3)})
-    blocks[4].addEventListener("click",function(){player(4)})
-    blocks[5].addEventListener("click",function(){player(5)})
-    blocks[6].addEventListener("click",function(){player(6)})
+    blocks[0]=rows[0].children
+    blocks[0][0].addEventListener("click",function(){player(0)})
+    blocks[0][1].addEventListener("click",function(){player(1)})
+    blocks[0][2].addEventListener("click",function(){player(2)})
+    blocks[0][3].addEventListener("click",function(){player(3)})
+    blocks[0][4].addEventListener("click",function(){player(4)})
+    blocks[0][5].addEventListener("click",function(){player(5)})
+    blocks[0][6].addEventListener("click",function(){player(6)})
     }
     const player=(p)=>{
         if(currentPlayer=="player1"){
