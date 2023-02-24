@@ -14,13 +14,13 @@ let parent=document.querySelector(".connect4Box")
     {
     blocks[i][k].style.cssText=
       "height:70px;width:70px; border:solid; blue;border-radius: 50%;background-color:white";// adding styles to blocks
-     blocks[i][k].value=0;
+    
      
     }
     }
   }
   blockStyle();
-  blockStyle();
+  
   const btnClick=()=>{
     txt=document.querySelector(".txt")
     txt.innerHTML=currentPlayer
@@ -44,12 +44,9 @@ let parent=document.querySelector(".connect4Box")
     }
     const player1=(i)=>{
       for (j=5;j>=0;j--){
-             
-                
               if(blocks[j][i].style.backgroundColor==="white"){
                 blocks[j][i].style.backgroundColor="red"
-                blocks[j][i].value=1
-                blocks[j][i].append( blocks[j][i].value)
+               
                 currentPlayer="player2"
                 txt=document.querySelector(".txt")
                 txt.innerHTML=currentPlayer
@@ -64,13 +61,13 @@ let parent=document.querySelector(".connect4Box")
   const player2=(i)=>{
         
           
-    for(let k=5;k>=0;k--) {
+    for( j=5;j>=0;j--) {
    
     {
-      if(blocks[k][i].style.backgroundColor==="white"){
-        blocks[k][i].style.backgroundColor="yellow"
-        blocks[k][i].value=2
-        blocks[k][i].append( blocks[k][i].value)
+      if(blocks[j][i].style.backgroundColor==="white"){
+        blocks[j][i].style.backgroundColor="yellow"
+        
+     
         currentPlayer="player1"
         txt=document.querySelector(".txt")
         txt.innerHTML=currentPlayer
@@ -80,4 +77,8 @@ let parent=document.querySelector(".connect4Box")
     
     // checkWinner(i);       
 }
+}
+const startGame=()=>{
+  btnClick();
+
 }
