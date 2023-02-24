@@ -84,7 +84,7 @@ const startGame=()=>{
 
 }
 const checkWinner=()=>
-     {
+     {//row matching
     for (let j=5;j>=0;j--)
       {
         for(i=0;i<=6;i++)
@@ -97,16 +97,28 @@ const checkWinner=()=>
           return
           }
         }
-
-       
-          // if(c[j][i]===c[j+1][i] && c[j][i]===c[j+2][i] && c[j][i]===c[j+3][i])
-          // {
-          //  document.querySelector(".yellownames").innerHTML="you win"
-          //  }
-        }
       }
+    }
+  //column matching
+        for(i=0;i<=6;i++)
+        {
+          for (let j=5;j>=0;j--)
+          {
+
+            if(c[j][i]==10 || c[j][i]==20 )
+            {
+            if(c[j][i]===c[j-1][i] && c[j][i]===c[j-2][i] && c[j][i]===c[j-3][i])
+          {
+           document.querySelector(".yellownames").innerHTML="you win"
+           }
+          }
+          }
+        }
+     }    
+    
+     
    
     
       
   
-    }
+   
