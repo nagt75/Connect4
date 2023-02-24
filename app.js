@@ -6,13 +6,17 @@ let parent=document.querySelector(".connect4Box")
    let currentPlayer="player1";
    let txt;
    const blockStyle=()=>{
-    for(i=0;i<rows.length;i++)
+    
+    for(i=0;i<=5;i++)
     {
-     blocks=rows[i].children // getting circle blocks as children of rows
-    for(j=0;j<blocks.length;j++){
-       blocks[j].style.cssText=
-        "height:70px;width:70px; border:solid; blue;border-radius: 50%;background-color:white";// adding styles to blocks
-       }
+    blocks[i]=rows[i].children// getting circle blocks as children of rows
+    for(k=0;k<=6;k++)
+    {
+    blocks[i][k].style.cssText=
+      "height:70px;width:70px; border:solid; blue;border-radius: 50%;background-color:white";// adding styles to blocks
+     blocks[i][k].value=0;
+     
+    }
     }
   }
   blockStyle();
