@@ -63,8 +63,6 @@ let parent=document.querySelector(".connect4Box")
   const player2=(i)=>{
         
    for( j=5;j>=0;j--) {
-   
-    
       if(blocks[j][i].style.backgroundColor==="white"){
         blocks[j][i].style.backgroundColor="yellow"
         c[j][i]=20
@@ -150,11 +148,19 @@ const checkWinner=()=>
       
       if(currentPlayer=="player1"){
         document.querySelector(".winner").innerHTML="Player2 Wins"
-        return;
+        disable();
       }
-      else{
+      else if(currentPlayer=="player2"){
         document.querySelector(".winner").innerHTML="Player1 Wins"
-        return;
+         disable();
+       }
+    }
+    const disable=()=>{
+      blocks[0]=rows[0].children
+      for (i=0;i<=6;i++)
+      { 
+      blocks[0][i].disabled=true
+      document.querySelector(".connect4Box").innerHTML="Game over"
       }
     }
    
