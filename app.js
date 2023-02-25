@@ -82,6 +82,10 @@ const startGame=()=>{
   btnClick();
 
 }
+const reset=()=>
+{
+  location.reload();
+}
 const checkWinner=()=>
      {//row matching
     for (let j=5;j>=0;j--)

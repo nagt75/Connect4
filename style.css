@@ -1,5 +1,5 @@
 .mainContainer{
-    border:solid;
+    /* border:solid; */
     width:100%;
     height:550px;
     margin-top:10%;
@@ -12,6 +12,7 @@
   height:550px;
   margin-left: 20%;
   background-color: blue;
+  box-shadow: 0 0 10px;
 }
 .rowOne,.rowTwo,.rowThree,.rowFour,.rowFive,.rowSix
 {
@@ -23,13 +24,33 @@
   justify-content: space-evenly;
 }
 .txt,.winner{
-  border:solid red;
+  /* border:solid red; */
+  padding:20px;
   width:300px;
-  height:200px
+  height:200px;
+  box-sizing: border-box;
 }
 .play{
   width:100px;
   height:40px;
-  margin-left:30%;
-  margin-top:20px;
+  margin-left:35%;
+  margin-top:25px;
+  border-radius: 22px;
+  background-color: blueviolet;
+  color:white;
+  font-size: 20px;
+}
+.reset{
+  width:100px;
+  height:40px;
+  margin-left:20px;
+  margin-top:25px;
+  border-radius: 22px;
+  background-color: blueviolet;
+  color:white;
+  font-size: 20px;
+}
+.play:hover,.reset:hover{
+  background-color: brown;
+  color: white;
 }
