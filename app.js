@@ -18,8 +18,7 @@ let parent=document.querySelector(".connect4Box")
     blocks[j]=rows[j].children// getting circle blocks as children of rows
     for(i=0;i<=6;i++)
     {
-
-    blocks[j][i].style.cssText=
+      blocks[j][i].style.cssText=
       "height:70px;width:70px; border:solid; blue;border-radius: 50%;background-color:white";// adding styles to blocks
     }
     }
@@ -113,7 +112,7 @@ const checkWinner=()=>
           }
           }
         }
-        //diagnol from bottom left to up direction
+        //diagnol mathing from bottom left to up direction
         for(i=0;i<=6;i++)
         {
           for (let j=5;j>=0;j--)
@@ -127,7 +126,20 @@ const checkWinner=()=>
             }
           } 
         }
-     
+        ////diagnol mathing from bottom right to up direction
+        for(i=6;i>=0;i--)
+        {
+          for (let j=5;j>=0;j--)
+          {
+            if(c[j][i]==10 || c[j][i]==20 )
+            {
+              if(c[j][i]===c[j-1][i-1] && c[j][i]===c[j-2][i-2] && c[j][i]===c[j-3][i-3])
+              {
+                result(); 
+              }
+            }
+          } 
+        }
     }    
     
     const result=()=>{
