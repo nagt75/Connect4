@@ -145,11 +145,11 @@ const checkWinner=()=>
     const result=()=>{
       
       if(currentPlayer=="player1"){
-        document.querySelector(".rednames").innerHTML="Player2 Wins"
+        document.querySelector(".winner").innerHTML="Player2 Wins"
         return;
       }
       else{
-        document.querySelector(".rednames").innerHTML="Player1 Wins"
+        document.querySelector(".winner").innerHTML="Player1 Wins"
         return;
       }
     }
