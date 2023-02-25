@@ -93,8 +93,8 @@ const checkWinner=()=>
          {
          if(c[j][i]===c[j][i+1] && c[j][i]===c[j][i+2] && c[j][i]===c[j][i+3])
          {
-          document.querySelector(".rednames").innerHTML="you win"
-          return
+          result();
+          
           }
         }
       }
@@ -109,14 +109,25 @@ const checkWinner=()=>
             {
             if(c[j][i]===c[j-1][i] && c[j][i]===c[j-2][i] && c[j][i]===c[j-3][i])
           {
-           document.querySelector(".yellownames").innerHTML="you win"
+           result();
+           
            }
           }
           }
         }
      }    
     
-     
+    const result=()=>{
+      
+      if(currentPlayer=="player1"){
+        document.querySelector(".rednames").innerHTML="Player2 Wins"
+        return;
+      }
+      else{
+        document.querySelector(".rednames").innerHTML="Player1 Wins"
+        return;
+      }
+    }
    
     
       
