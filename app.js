@@ -94,7 +94,6 @@ const checkWinner=()=>
          if(c[j][i]===c[j][i+1] && c[j][i]===c[j][i+2] && c[j][i]===c[j][i+3])
          {
           result();
-          
           }
         }
       }
@@ -110,12 +109,26 @@ const checkWinner=()=>
             if(c[j][i]===c[j-1][i] && c[j][i]===c[j-2][i] && c[j][i]===c[j-3][i])
           {
            result();
-           
            }
           }
           }
         }
-     }    
+        //diagnol from bottom left to up direction
+        for(i=0;i<=6;i++)
+        {
+          for (let j=5;j>=0;j--)
+          {
+            if(c[j][i]==10 || c[j][i]==20 )
+            {
+              if(c[j][i]===c[j-1][i+1] && c[j][i]===c[j-2][i+2] && c[j][i]===c[j-3][i+3])
+              {
+                result(); 
+              }
+            }
+          } 
+        }
+     
+    }    
     
     const result=()=>{
       
