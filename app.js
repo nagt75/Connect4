@@ -157,13 +157,15 @@ const checkWinner=()=>
     }
     const disable=()=>{
       blocks[0]=rows[0].children
-      for (i=0;i<=6;i++)
-      { 
-      blocks[0][i].disabled=true
-      document.querySelector(".connect4Box").innerHTML="Game over"
-      }
+     for (i=0;i<=6;i++){
+      blocks[0][i].addEventListener("click",function(){gameOver()})
+     }
     }
-   
+   const gameOver=()=>
+   {
+   let connect4 = document.querySelector(".connect4Box")
+      connect4.innerHTML="Game Over"
+    }
     
       
   
