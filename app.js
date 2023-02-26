@@ -6,6 +6,7 @@ let parent=document.querySelector(".connect4Box")
    let currentPlayer="player1";
    let txt;
    let c=[];
+   
 
    //making array variable c to a 2 dimensional array
    for (let i = 0; i <=5; i++) {
@@ -52,7 +53,7 @@ let parent=document.querySelector(".connect4Box")
       for (j=5;j>=0;j--){
               if(blocks[j][i].style.backgroundColor==="white"){
                 blocks[j][i].style.backgroundColor="red"
-                c[j][i]=10
+                c[j][i]=10;
                 currentPlayer="player2"
                 txt=document.querySelector(".txt")
                 txt.innerHTML=currentPlayer
@@ -67,7 +68,7 @@ let parent=document.querySelector(".connect4Box")
    for( j=5;j>=0;j--) {
       if(blocks[j][i].style.backgroundColor==="white"){
         blocks[j][i].style.backgroundColor="yellow"
-        c[j][i]=20
+        c[j][i]=20;
         currentPlayer="player1"
         txt=document.querySelector(".txt")
         txt.innerHTML=currentPlayer
@@ -92,7 +93,7 @@ const checkWinner=()=>
       {
         for(i=0;i<=6;i++)
          {
-         if(c[j][i]==10 || c[j][i]==20 )
+         if(c[j][i]===10 || c[j][i]===20 )
          {
          if(c[j][i]===c[j][i+1] && c[j][i]===c[j][i+2] && c[j][i]===c[j][i+3])
          {
@@ -107,7 +108,7 @@ const checkWinner=()=>
           for (let j=5;j>=0;j--)
           {
 
-            if(c[j][i]==10 || c[j][i]==20 )
+            if(c[j][i]===10 || c[j][i]===20 )
             {
             if(c[j][i]===c[j-1][i] && c[j][i]===c[j-2][i] && c[j][i]===c[j-3][i])
           {
@@ -121,7 +122,7 @@ const checkWinner=()=>
         {
           for (let j=5;j>=0;j--)
           {
-            if(c[j][i]==10 || c[j][i]==20 )
+            if(c[j][i]===10 || c[j][i]===20 )
             {
               if(c[j][i]===c[j-1][i+1] && c[j][i]===c[j-2][i+2] && c[j][i]===c[j-3][i+3])
               {
@@ -131,23 +132,20 @@ const checkWinner=()=>
           } 
         }
         ////diagnol mathing from bottom right to up direction
-        for(i=6;i>=0;i--)
+        for(i=0;i<=6;i++)
         {
-          for (let j=5;j>=0;j--)
+          for (let j=0;j<=5;j++)
           {
-            if(c[j][i]==10 || c[j][i]==20 )
+            if(c[j][i]===10 || c[j][i]===20 )
             {
-              if(c[j][i]===c[j-1][i-1] && c[j][i]===c[j-2][i-2] && c[j][i]===c[j-3][i-3])
+              if(c[j][i]===c[j+1][i+1] && c[j][i]===c[j+2][i+2] && c[j][i]===c[j+3][i+3])
               {
                 result(); 
               }
             }
           } 
         }
-        // if(counter===42)
-        // {
-        //   document.querySelector(".winner").innerHTML="Tie"
-        // }
+        
     }    
     
     const result=()=>{
