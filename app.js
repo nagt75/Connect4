@@ -6,6 +6,8 @@ let parent=document.querySelector(".connect4Box")
    let currentPlayer="player1";
    let txt;
    let c=[];
+
+   //making array variable c to a 2 dimensional array
    for (let i = 0; i <=5; i++) {
       c[i] = [];
     for (let j = 0; j <=6; j++) {
@@ -142,6 +144,10 @@ const checkWinner=()=>
             }
           } 
         }
+        // if(counter===42)
+        // {
+        //   document.querySelector(".winner").innerHTML="Tie"
+        // }
     }    
     
     const result=()=>{
@@ -155,12 +161,19 @@ const checkWinner=()=>
          disable();
        }
     }
+    //to make buttons disable if one of the players win the game
     const disable=()=>{
       blocks[0]=rows[0].children
-     for (i=0;i<=6;i++){
-      blocks[0][i].addEventListener("click",function(){gameOver()})
-     }
+    blocks[0][0].addEventListener("click",function(){gameOver()})
+    blocks[0][1].addEventListener("click",function(){gameOver()})
+    blocks[0][2].addEventListener("click",function(){gameOver()})
+    blocks[0][3].addEventListener("click",function(){gameOver()})
+    blocks[0][4].addEventListener("click",function(){gameOver()})
+    blocks[0][5].addEventListener("click",function(){gameOver()})
+    blocks[0][6].addEventListener("click",function(){gameOver()})
     }
+
+    //removes all the rows and columns and displays Gameover message"
    const gameOver=()=>
    {
    let connect4 = document.querySelector(".connect4Box")
