@@ -164,8 +164,14 @@ const checkWinner=()=>
    const gameOver=()=>
    {
    let connect4 = document.querySelector(".connect4Box")
-      connect4.innerHTML="Game Over"
+    while (connect4.hasChildNodes()) {
+     connect4.removeChild(connect4.firstChild);
     }
+    let txt= document.createElement("h1")
+    txt.classList.add("txt2")
+    txt.innerHTML="Game Over"
+    connect4.appendChild(txt)
+  }
     
       
   
