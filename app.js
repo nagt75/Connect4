@@ -6,13 +6,15 @@ let parent=document.querySelector(".connect4Box")
    let currentPlayer="player1";
    let txt;
    let c=[];
-   let enable=true;
+   let counter=0;
+   enable=true;
+  
    
 
    //making array variable c to a 2 dimensional array
-   for (let i = 0; i <=5; i++) {
+   for (let i = 0; i<=5; i++) {
       c[i] = [];
-    for (let j = 0; j <=6; j++) {
+    for (let j = 0; j<=6; j++) {
     c[i][j] = 0;
     }
    }
@@ -41,7 +43,7 @@ let parent=document.querySelector(".connect4Box")
     blocks[0][4].addEventListener("click",function(){if(enable==true){player(4)}})
     blocks[0][5].addEventListener("click",function(){if(enable==true){player(5)}})
     blocks[0][6].addEventListener("click",function(){if(enable==true){player(6)}})
-    
+  
   }
     const player=(p)=>{
         if(currentPlayer=="player1"){
@@ -56,7 +58,7 @@ let parent=document.querySelector(".connect4Box")
       for (j=5;j>=0;j--){
               if(blocks[j][i].style.backgroundColor==="white"){
                 blocks[j][i].style.backgroundColor="red"
-                c[j][i]=10;
+                c[j][i]=1;
                 currentPlayer="player2"
                 txt=document.querySelector(".txt")
                 txt.innerHTML=currentPlayer
@@ -71,7 +73,7 @@ let parent=document.querySelector(".connect4Box")
    for( j=5;j>=0;j--) {
       if(blocks[j][i].style.backgroundColor==="white"){
         blocks[j][i].style.backgroundColor="yellow"
-        c[j][i]=20;
+        c[j][i]=2;
         currentPlayer="player1"
         txt=document.querySelector(".txt")
         txt.innerHTML=currentPlayer
@@ -81,7 +83,7 @@ let parent=document.querySelector(".connect4Box")
     
     checkWinner();       
 }
-
+//pay button function
 const startGame=()=>{
  
   btnClick();
@@ -92,63 +94,73 @@ const reset=()=>
   location.reload();
 }
 const checkWinner=()=>
-     {//row matching
+     {
+          //row matching
     for (let j=5;j>=0;j--)
       {
-        for(i=0;i<=6;i++)
+        for(i=0;i<=3;i++)
          {
-         if(c[j][i]===10 || c[j][i]===20 )
+         if(c[j][i]!=0)
          {
          if(c[j][i]===c[j][i+1] && c[j][i]===c[j][i+2] && c[j][i]===c[j][i+3])
          {
           result();
+          return;
           }
+         
         }
+       
       }
     }
   //column matching
-        for(i=0;i<=6;i++)
-        {
-          for (let j=5;j>=0;j--)
+        
+      for (let j=5;j>=3;j--)
           {
-
-            if(c[j][i]===10 || c[j][i]===20 )
+            for(i=0;i<=6;i++)
             {
-            if(c[j][i]===c[j-1][i] && c[j][i]===c[j-2][i] && c[j][i]===c[j-3][i])
+            if(c[j][i]!=0 )
+            {
+            if(c[j][i]===c[j-1][i] && c[j-1][i]===c[j-2][i] && c[j-2][i]===c[j-3][i])
           {
            result();
+           return;
            }
           }
           }
         }
-        //diagnol mathing from bottom left to up direction
+        //diagnol mathing 
+        for (let j=5;j>=0;j--)
+        {
         for(i=0;i<=6;i++)
         {
-          for (let j=5;j>=0;j--)
-          {
-            if(c[j][i]===10 || c[j][i]===20 )
+            if(c[j][i]!=0)
             {
-              if(c[j][i]===c[j-1][i+1] && c[j][i]===c[j-2][i+2] && c[j][i]===c[j-3][i+3])
+              if(c[j][i]===c[j-1][i+1] && c[j-1][i+1]===c[j-2][i+2] && c[j-2][i+2]===c[j-3][i+3])
               {
                 result(); 
+                return;
               }
+              
             }
           } 
         }
-        ////diagnol mathing from bottom right to up direction
+        //anti diagnol matching
         for(i=0;i<=6;i++)
         {
-          for (let j=0;j<=5;j++)
-          {
-            if(c[j][i]===10 || c[j][i]===20 )
+        for (let j=0;j<=5;j++)
+        {
+      
+       if(c[j][i]!=0)
             {
               if(c[j][i]===c[j+1][i+1] && c[j][i]===c[j+2][i+2] && c[j][i]===c[j+3][i+3])
               {
                 result(); 
+                return;
               }
             }
           } 
         }
+      
         
     }    
     
@@ -189,7 +201,7 @@ const checkWinner=()=>
     txt.innerHTML="Game Over"
     connect4.appendChild(txt)
   }
+        
     
-      
-  
+   
    
