@@ -26,6 +26,7 @@ let parent=document.querySelector(".connect4Box")
     {
       blocks[j][i].style.cssText=
       "height:70px;width:70px; border:solid; blue;border-radius: 50%;background-color:white";// adding styles to blocks
+    
     }
     }
   }
@@ -59,6 +60,7 @@ let parent=document.querySelector(".connect4Box")
               if(blocks[j][i].style.backgroundColor==="white"){
                 blocks[j][i].style.backgroundColor="red"
                 c[j][i]=1;
+               
                 currentPlayer="player2"
                 txt=document.querySelector(".txt")
                 txt.innerHTML=currentPlayer
@@ -74,6 +76,7 @@ let parent=document.querySelector(".connect4Box")
       if(blocks[j][i].style.backgroundColor==="white"){
         blocks[j][i].style.backgroundColor="yellow"
         c[j][i]=2;
+        
         currentPlayer="player1"
         txt=document.querySelector(".txt")
         txt.innerHTML=currentPlayer
@@ -114,7 +117,7 @@ const checkWinner=()=>
     }
   //column matching
         
-      for (let j=5;j>=3;j--)
+      for (j=5;j>=3;j--)
           {
             for(i=0;i<=6;i++)
             {
@@ -129,7 +132,7 @@ const checkWinner=()=>
           }
         }
         //diagnol mathing 
-        for (let j=5;j>=0;j--)
+        for (j=5;j>=0;j--)
         {
         for(i=0;i<=6;i++)
         {
@@ -145,9 +148,9 @@ const checkWinner=()=>
           } 
         }
         //anti diagnol matching
-        for(i=0;i<=6;i++)
+        for(i=0;i<=3;i++)
         {
-        for (let j=0;j<=5;j++)
+        for (j=0;j<=2;j++)
         {
       
        if(c[j][i]!=0)

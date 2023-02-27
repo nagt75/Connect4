@@ -24,11 +24,14 @@
   justify-content: space-evenly;
 }
 .txt,.winner{
-  /* border:solid red; */
+  border:double black;
+  border-radius: 10px;
   padding:20px;
   width:300px;
-  height:200px;
+  height:100px;
   box-sizing: border-box;
+  text-align: center;
+  color:red;
 }
 .play{
   width:100px;
