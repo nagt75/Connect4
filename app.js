@@ -60,6 +60,7 @@ let parent=document.querySelector(".connect4Box")
               if(blocks[j][i].style.backgroundColor==="white"){
                 blocks[j][i].style.backgroundColor="red"
                 c[j][i]=1;
+                counter++;
                 currentPlayer="player2"
                 txt=document.querySelector(".txt")
                 txt.innerHTML=currentPlayer
@@ -75,6 +76,7 @@ let parent=document.querySelector(".connect4Box")
       if(blocks[j][i].style.backgroundColor==="white"){
         blocks[j][i].style.backgroundColor="yellow"
         c[j][i]=2;
+        counter++;
         currentPlayer="player1"
         txt=document.querySelector(".txt")
         txt.innerHTML=currentPlayer
@@ -82,7 +84,7 @@ let parent=document.querySelector(".connect4Box")
        }
      } 
     
-    setTimeout(checkWinner,2000);       
+   checkWinner();       
 }
 //pay button function
 const startGame=()=>{
@@ -108,7 +110,7 @@ const checkWinner=()=>
           result();
           return;
           }
-         
+          
         }
        
       }
@@ -126,7 +128,9 @@ const checkWinner=()=>
            result();
            return;
            }
+         
           }
+     
           }
         }
         //diagnol mathing 
@@ -141,7 +145,7 @@ const checkWinner=()=>
                 result(); 
                 return;
               }
-              
+             
             }
           } 
         }
@@ -158,6 +162,7 @@ const checkWinner=()=>
                 result(); 
                 return;
               }
+             
             }
           } 
         }
@@ -168,12 +173,12 @@ const checkWinner=()=>
     const result=()=>{
       
       if(currentPlayer=="player1"){
-        document.querySelector(".winner").innerHTML="Player2 Wins"
+        document.querySelector(".winner").innerHTML="Player 2"
         enable=false;
         disable();
       }
       else if(currentPlayer=="player2"){
-        document.querySelector(".winner").innerHTML="Player1 Wins"
+        document.querySelector(".winner").innerHTML="Player 1"
         enable=false;
          disable();
        }
@@ -202,6 +207,7 @@ const checkWinner=()=>
     txt.innerHTML="Game Over"
     connect4.appendChild(txt)
   }
+  
         
     
    
