@@ -6,6 +6,7 @@ let parent=document.querySelector(".connect4Box")
    let currentPlayer="player1";
    let txt;
    let c=[];
+   let enable=true;
    
 
    //making array variable c to a 2 dimensional array
@@ -32,14 +33,16 @@ let parent=document.querySelector(".connect4Box")
     txt=document.querySelector(".txt")
     txt.innerHTML=currentPlayer
     blocks[0]=rows[0].children
-    blocks[0][0].addEventListener("click",function(){player(0)})
-    blocks[0][1].addEventListener("click",function(){player(1)})
-    blocks[0][2].addEventListener("click",function(){player(2)})
-    blocks[0][3].addEventListener("click",function(){player(3)})
-    blocks[0][4].addEventListener("click",function(){player(4)})
-    blocks[0][5].addEventListener("click",function(){player(5)})
-    blocks[0][6].addEventListener("click",function(){player(6)})
-    }
+ 
+    blocks[0][0].addEventListener("click",function(){if(enable==true){player(0)}})
+    blocks[0][1].addEventListener("click",function(){if(enable==true){player(1)}})
+    blocks[0][2].addEventListener("click",function(){if(enable==true){player(2)}})
+    blocks[0][3].addEventListener("click",function(){if(enable==true){player(3)}})
+    blocks[0][4].addEventListener("click",function(){if(enable==true){player(4)}})
+    blocks[0][5].addEventListener("click",function(){if(enable==true){player(5)}})
+    blocks[0][6].addEventListener("click",function(){if(enable==true){player(6)}})
+    
+  }
     const player=(p)=>{
         if(currentPlayer=="player1"){
             player1(p)
@@ -80,8 +83,9 @@ let parent=document.querySelector(".connect4Box")
 }
 
 const startGame=()=>{
+ 
   btnClick();
-
+ 
 }
 const reset=()=>
 {
@@ -152,10 +156,12 @@ const checkWinner=()=>
       
       if(currentPlayer=="player1"){
         document.querySelector(".winner").innerHTML="Player2 Wins"
+        enable=false;
         disable();
       }
       else if(currentPlayer=="player2"){
         document.querySelector(".winner").innerHTML="Player1 Wins"
+        enable=false;
          disable();
        }
     }
