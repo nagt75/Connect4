@@ -12,10 +12,10 @@ let parent=document.querySelector(".connect4Box")
    
 
    //making array variable c to a 2 dimensional array
-   for (let i = 0; i<=5; i++) {
-      c[i] = [];
-    for (let j = 0; j<=6; j++) {
-    c[i][j] = 0;
+   for (let j = 0; j<=5; j++) {
+      c[j] = [];
+    for (let i = 0; i<=6; i++) {
+    c[j][i] = 0;
     }
    }
    const blockStyle=()=>{
