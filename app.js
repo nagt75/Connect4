@@ -25,8 +25,8 @@ let parent=document.querySelector(".connect4Box")
     for(i=0;i<=6;i++)
     {
       blocks[j][i].style.cssText=
-      "height:70px;width:70px; border:solid; blue;border-radius: 50%;background-color:white";// adding styles to blocks
-    
+      "height:70px;width:70px; border:solid;border-radius: 50%;background-color:white";// adding styles to blocks
+      
     }
     }
   }
@@ -60,7 +60,6 @@ let parent=document.querySelector(".connect4Box")
               if(blocks[j][i].style.backgroundColor==="white"){
                 blocks[j][i].style.backgroundColor="red"
                 c[j][i]=1;
-               
                 currentPlayer="player2"
                 txt=document.querySelector(".txt")
                 txt.innerHTML=currentPlayer
@@ -76,7 +75,6 @@ let parent=document.querySelector(".connect4Box")
       if(blocks[j][i].style.backgroundColor==="white"){
         blocks[j][i].style.backgroundColor="yellow"
         c[j][i]=2;
-        
         currentPlayer="player1"
         txt=document.querySelector(".txt")
         txt.innerHTML=currentPlayer
@@ -84,7 +82,7 @@ let parent=document.querySelector(".connect4Box")
        }
      } 
     
-    checkWinner();       
+    setTimeout(checkWinner,2000);       
 }
 //pay button function
 const startGame=()=>{
