@@ -23,7 +23,7 @@
   display:flex;
   justify-content: space-evenly;
 }
-.txt,.winner{
+.txt,.txt1,.winner{
   border:double black;
   border-radius: 10px;
   padding:20px;
@@ -83,6 +83,7 @@
  color:rgb(255, 0, 0)
 }
 
+
 @media(max-width:680px)
 {
   .mainContainer{
@@ -100,7 +101,7 @@
     box-shadow: 0 0 10px; 
   }
   
-  .txt,.winner{
+  .txt,.txt1,.winner{
     border:double black;
     border-radius: 10px;
     padding:20px;
