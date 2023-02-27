@@ -110,7 +110,10 @@ const checkWinner=()=>
           result();
           return;
           }
-          
+          else if(counter===42)
+           {
+             tie();
+           }
         }
        
       }
@@ -128,7 +131,10 @@ const checkWinner=()=>
            result();
            return;
            }
-         
+           else if(counter===42)
+           {
+            tie();
+           }
           }
      
           }
@@ -145,7 +151,10 @@ const checkWinner=()=>
                 result(); 
                 return;
               }
-             
+              else if(counter===42)
+              {
+                tie();
+              }
             }
           } 
         }
@@ -162,7 +171,10 @@ const checkWinner=()=>
                 result(); 
                 return;
               }
-             
+              else if(counter===42)
+              {
+                tie();
+              }
             }
           } 
         }
@@ -207,7 +219,9 @@ const checkWinner=()=>
     txt.innerHTML="Game Over"
     connect4.appendChild(txt)
   }
-  
+  const tie=()=>{
+   document.querySelector(".winner").innerHTML="It's a tie"
+        }
         
     
    
